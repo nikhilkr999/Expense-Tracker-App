@@ -1,0 +1,405 @@
+<!-- res/layout/fragment_dashboard.xml -->
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    android:background="#16213e">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="#6c63f2"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- App Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Expense Flow"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="4dp" />
+
+                <!-- Greeting Text -->
+                <TextView
+                    android:id="@+id/tv_greeting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Good Evening! track your spending daily"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="10dp" />
+
+                <!-- Total Spending Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#8371f4"
+                    app:strokeColor="@color/blue_light"
+                    app:strokeWidth="1dp"
+                    android:layout_marginBottom="16dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginStart="16dp"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="This Month's Spending"
+                                android:fontFamily="sans-serif-medium"
+                                android:textSize="15sp"
+                                android:textColor="@color/white" />
+
+                            <Button
+                                android:id="@+id/current_month"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="8dp"
+                                android:text="July 2025"
+                                android:backgroundTint="#ac9ef8"
+                                android:textColor="@color/white"
+                                android:paddingHorizontal="0dp"
+                                android:paddingVertical="0dp"
+                                style="@style/Widget.Material3.Button.OutlinedButton" />
+
+                        </LinearLayout>
+
+
+
+
+                        <TextView
+                            android:id="@+id/tv_total_spent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="₹0.00"
+                            android:textSize="30sp"
+                            android:textStyle="bold"
+                            android:layout_marginStart="16dp"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/tv_top_categories"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:textSize="22sp"
+                            android:visibility="gone"
+                            android:textColor="@color/white" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="16dp">
+
+                            <!-- One full row for two category -->
+                            <LinearLayout
+                                android:id="@+id/ll_for_two"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_horizontal"
+                                android:layout_marginBottom="8dp"
+                                android:visibility="gone"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:id="@+id/tv_cat_name_20"
+                                    android:layout_width="0dp"
+                                    android:layout_height="70dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/tv_cat_bg"
+                                    android:text="Groceries"
+                                    android:textColor="@color/white"
+                                    android:textStyle="bold"
+                                    android:textSize="14sp"
+                                    android:paddingStart="16dp"
+                                    android:paddingEnd="16dp"
+                                    android:paddingTop="8dp"
+                                    android:paddingBottom="8dp"
+                                    android:layout_marginEnd="8dp" />
+                                <TextView
+                                    android:id="@+id/tv_cat_name_21"
+                                    android:layout_width="0dp"
+                                    android:layout_height="70dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/tv_cat_bg"
+                                    android:text="Groceries"
+                                    android:textColor="@color/white"
+                                    android:textStyle="bold"
+                                    android:textSize="14sp"
+                                    android:paddingStart="16dp"
+                                    android:paddingEnd="16dp"
+                                    android:paddingTop="8dp"
+                                    android:paddingBottom="8dp"
+                                    android:layout_marginEnd="8dp" />
+
+                            </LinearLayout>
+
+                            <!-- One full row for one category -->
+                            <LinearLayout
+                                android:id="@+id/ll_for_one"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_horizontal"
+                                android:layout_marginBottom="8dp"
+                                android:visibility="gone"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/tv_cat_name_one"
+                                    android:layout_width="0dp"
+                                    android:layout_height="70dp"
+                                    android:minWidth="100dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/tv_cat_bg"
+                                    android:text="Groceries"
+                                    android:textColor="@color/white"
+                                    android:textStyle="bold"
+                                    android:gravity="center"
+                                    android:textSize="14sp"
+                                    android:paddingStart="16dp"
+                                    android:paddingEnd="16dp"
+                                    android:paddingTop="8dp"
+                                    android:paddingBottom="8dp"
+                                    android:layout_marginEnd="8dp" />
+
+                            </LinearLayout>
+
+                            <!--  for 4 category -->
+                            <LinearLayout
+                                android:id="@+id/ll_for_allfour"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <!-- First row -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:gravity="center_horizontal"
+                                    android:layout_marginBottom="8dp"
+                                    android:weightSum="2">
+
+                                    <TextView
+                                        android:id="@+id/tv_cat_name_40"
+                                        android:layout_width="0dp"
+                                        android:layout_height="70dp"
+                                        android:minWidth="100dp"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/tv_cat_bg"
+                                        android:text="Groceries"
+                                        android:textColor="@color/white"
+                                        android:textStyle="bold"
+                                        android:textSize="14sp"
+                                        android:paddingStart="16dp"
+                                        android:paddingEnd="16dp"
+                                        android:paddingTop="8dp"
+                                        android:paddingBottom="8dp"
+                                        android:layout_marginEnd="8dp" />
+
+                                    <TextView
+                                        android:id="@+id/tv_cat_name_41"
+                                        android:layout_width="0dp"
+                                        android:layout_height="70dp"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/tv_cat_bg"
+                                        android:text="Groceries"
+                                        android:textColor="@color/white"
+                                        android:textStyle="bold"
+                                        android:textSize="14sp"
+                                        android:paddingStart="16dp"
+                                        android:paddingEnd="16dp"
+                                        android:paddingTop="8dp"
+                                        android:paddingBottom="8dp"
+                                        android:layout_marginEnd="8dp" />
+                                </LinearLayout>
+
+                                <!-- Second row -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_marginBottom="8dp"
+                                    android:gravity="center_horizontal"
+                                    android:weightSum="2">
+
+                                    <TextView
+                                        android:id="@+id/tv_cat_name_42"
+                                        android:layout_width="0dp"
+                                        android:layout_height="70dp"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/tv_cat_bg"
+                                        android:text="Groceries"
+                                        android:textColor="@color/white"
+                                        android:textStyle="bold"
+                                        android:textSize="14sp"
+                                        android:paddingStart="16dp"
+                                        android:paddingEnd="16dp"
+                                        android:paddingTop="8dp"
+                                        android:paddingBottom="8dp"
+                                        android:layout_marginEnd="8dp" />
+
+                                    <TextView
+                                        android:id="@+id/tv_cat_name_43"
+                                        android:layout_width="0dp"
+                                        android:layout_height="70dp"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/tv_cat_bg"
+                                        android:text="Groceries"
+                                        android:textColor="@color/white"
+                                        android:textStyle="bold"
+                                        android:textSize="14sp"
+                                        android:paddingStart="16dp"
+                                        android:paddingEnd="16dp"
+                                        android:paddingTop="8dp"
+                                        android:paddingBottom="8dp"
+                                        android:layout_marginEnd="8dp" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Quick Actions -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="10dp"
+                    android:layout_marginBottom="16dp">
+
+                    <Button
+                        android:id="@+id/btn_statistics"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:backgroundTint="#8870f5"
+                        android:text="Statistics"
+                        android:textSize="16sp"
+                        app:strokeColor="#3AFFFFFF"
+                        app:strokeWidth="1dp"
+                        android:textColor="@color/white"
+                        style="@style/Widget.Material3.Button.OutlinedButton" />
+
+                    <Button
+                        android:id="@+id/fab_add_expense"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:backgroundTint="#0ba875"
+                        android:layout_marginStart="8dp"
+                        android:textSize="16sp"
+                        android:textColor="@color/white"
+                        app:strokeColor="#3A006400"
+                        app:strokeWidth="1dp"
+                        android:text="Add Expense"
+                        style="@style/Widget.Material3.Button.OutlinedButton" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background"
+            android:layout_marginBottom="90sp"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <!-- Recent Expenses -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recent Expenses"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/btn_view_all_expenses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View All"
+                    android:textColor="#ADD8E6"
+                    style="@style/Widget.Material3.Button.OutlinedButton" />
+
+            </LinearLayout>
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_recent_expenses"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+            <TextView
+                android:id="@+id/tv_empty_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="No expenses yet.\nTap + to add your first expense!"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textColor="@color/text_secondary"
+                android:visibility="gone"
+                android:layout_marginTop="32dp" />
+            <!-- Progress Bar -->
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

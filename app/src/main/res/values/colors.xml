@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="primary">#6c63f2</color>
+    <color name="primary_dark">#3700B3</color>
+    <color name="primary_light">#6200EE</color>
+    <color name="accent">#03DAC5</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="expense_red">#F44336</color>
+    <color name="background">#16213e</color>
+    <color name="color_active">#FF0000</color> <!-- Red for active state -->
+    <color name="color_inactive">#B0B0B0</color> <!-- Grey for inactive state -->
+    <color name="bottom_nav_background">#121212</color>
+
+    <color name="blue">#6c63f2</color>
+    <color name="blue_light">#6495ED</color>
+
+    <color name="grey_light">#C0C0C0</color>
+    <color name="item_strock">#3AFFFFFF</color>
+    <color name="item_background">#222c48</color>
+
+</resources>
